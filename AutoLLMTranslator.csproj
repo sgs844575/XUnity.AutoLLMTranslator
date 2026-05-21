@@ -36,8 +36,4 @@
 		<ILRepack OutputType="$(OutputType)" MainAssembly="$(AssemblyName).dll" OutputAssembly="$(AssemblyName).dll" InputAssemblies="@(InputAssemblies)" InternalizeExcludeAssemblies="@(InternalizeExcludeAssemblies)" WorkingDirectory="$(WorkingDirectory)" />
 	</Target>
 
-	<Target Name="PostBuild" AfterTargets="ILRepack">
-		<Exec Command="XCOPY /Y /I &quot;$(TargetDir)$(TargetName)$(TargetExt)&quot; &quot;$(GameDir)&quot;" />
-	</Target>
-
 </Project>
