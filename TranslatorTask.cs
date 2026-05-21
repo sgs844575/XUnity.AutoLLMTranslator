@@ -19,12 +19,13 @@ public class TranslatorTask
         string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
         string language = context.DestinationLanguage ?? "zh_cn";
 
+        string translationBase = TranslationPathHelper.GetTranslationPath(appDirectory, language);
         string[] requiredFolders = new[]
         {
-            Path.Combine(appDirectory, "BepInEx", "Translation", language, "Dictionary"),
-            Path.Combine(appDirectory, "BepInEx", "Translation", language, "Prompt"),
-            Path.Combine(appDirectory, "BepInEx", "Translation", language, "Context"),
-            Path.Combine(appDirectory, "BepInEx", "Translation", language, "Text")
+            Path.Combine(translationBase, "Dictionary"),
+            Path.Combine(translationBase, "Prompt"),
+            Path.Combine(translationBase, "Context"),
+            Path.Combine(translationBase, "Text")
         };
 
         foreach (var folder in requiredFolders)

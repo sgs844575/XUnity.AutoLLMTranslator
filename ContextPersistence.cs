@@ -39,7 +39,7 @@ public class ContextPersistence
         _autoSaveThreshold = Math.Max(autoSaveThreshold, 5);
 
         string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        _contextDirectory = Path.Combine(appDirectory, "BepInEx", "Translation", language, "Context");
+        _contextDirectory = Path.Combine(TranslationPathHelper.GetTranslationPath(appDirectory, language), "Context");
         PathUtils.EnsureFolderExists(_contextDirectory);
 
         _recentFile = Path.Combine(_contextDirectory, "recent.json");

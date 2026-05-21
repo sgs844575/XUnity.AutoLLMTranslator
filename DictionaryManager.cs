@@ -24,7 +24,7 @@ public class DictionaryManager
             _dictMap.Clear();
             int index = 0;
             string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            var folderPath = Path.Combine(appDirectory, "BepInEx", "Translation", Language, "Dictionary");
+            var folderPath = Path.Combine(TranslationPathHelper.GetTranslationPath(appDirectory, Language), "Dictionary");
             PathUtils.EnsureFolderExists(folderPath);
             List<string> txtFiles = _fileManager.GetAllTxtFiles(folderPath);
 

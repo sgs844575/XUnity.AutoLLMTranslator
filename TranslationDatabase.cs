@@ -70,7 +70,7 @@ public class TranslationDatabase
             _sortedTranslateDatas.Clear();
 
             string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            var folderPath = Path.Combine(appDirectory, "BepInEx", "Translation", context.DestinationLanguage, "Text");
+            var folderPath = Path.Combine(TranslationPathHelper.GetTranslationPath(appDirectory, context.DestinationLanguage), "Text");
             PathUtils.EnsureFolderExists(folderPath);
             List<string> txtFiles = _fileManager.GetAllTxtFiles(folderPath);
 

@@ -365,7 +365,13 @@ FodyWeavers.xsd
 # Packages
 !packages/*
 
-*.md
+# IDE / local tool configs
 .idea
 .claude
+.trae
+
+# Visual Studio launch settings (may contain local paths)
+Properties/
+
+# Project-specific docs (not for repo)
 CLAUDE.md

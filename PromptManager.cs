@@ -16,7 +16,7 @@ public class PromptManager
     public string GetPrompt()
     {
         string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        var txtFile = $"{appDirectory}\\BepInEx\\Translation\\{Language}\\Prompt\\Prompt.txt";
+        var txtFile = Path.Combine(TranslationPathHelper.GetTranslationPath(appDirectory, Language), "Prompt", "Prompt.txt");
         PathUtils.EnsureFileExists(txtFile, Config.prompt_modify);
         Logger.Info("PromptManager", "提示词读取成功");
         return _fileManager.ReadFile(txtFile);
